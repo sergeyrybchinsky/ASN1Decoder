@@ -340,6 +340,7 @@ public class X509Certificate: CustomStringConvertible {
 public class PublicKey {
     private let OID_ECPublicKey = "1.2.840.10045.2.1"
     private let OID_RSAEncryption = "1.2.840.113549.1.1.1"
+    private let OID_CP_GOST_R3410_12_256 = "1.2.643.7.1.1.1.1"
 
     var pkBlock: ASN1Object!
 
@@ -367,7 +368,7 @@ public class PublicKey {
         }
 
         switch algOid {
-        case OID_ECPublicKey:
+        case OID_ECPublicKey, OID_CP_GOST_R3410_12_256:
             return keyData
 
         case OID_RSAEncryption:
